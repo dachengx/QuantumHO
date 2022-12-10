@@ -1,0 +1,80 @@
+\section*{b}
+
+Now recall that the quantum-mechanical transition amplitude between two states with positions $x$ and $x'$ is in direct correspondence with the matrix element of $e^{-\beta\hat{H}}$
+
+\begin{equation}
+    \langle x',t'|x,t\rangle = \langle x'|e^{-\frac{i}{\hbar}\hat{H}(t'-t)}|x\rangle \rightarrow \langle x'|e^{-\beta\hat{H}}|x\rangle
+\end{equation}
+
+upon the substitution $(t'-t)\rightarrow -i\hbar\beta$. On the other hand, we know that the amplitude $\langle x',t'|x,t\rangle$ can be expressed as a Feynman path integral
+
+\begin{equation}
+    \langle x'=x_N,t'=t_N|x=x_0,t=t_0\rangle = \int_{x(t)=x}^{x(t')=x'}\mathcal{D}x e^{\frac{i}{\hbar}S[x(t)]} \label{eq:1}, 
+\end{equation}
+
+where we assume the timeline $t_N-t_0$ to be broken down into $N$ equal and small time intervals $\Delta t$,
+
+\begin{equation}
+    \int\mathcal{D}x \equiv \Pi_{n=1}^{N-1}\left[\int_{-\infty}^\infty\mathrm{d}x_n\sqrt{\frac{m}{2\pi i\hbar\Delta t}}\right],
+\end{equation}
+
+and $S$ is the action for our harmonic oscillator evaluated on a trajectory $x(t)$
+
+\begin{equation}
+    S[x(t)] = \int_{t_0}^{t_N}\left(\frac{1}{2}m\dot{x}^2-\frac{1}{2}m\omega^2x^2\right)\mathrm{d}s.
+\end{equation}
+
+Set classical action as $S_{\mathrm{cl}}(t,t',x,x') \equiv S[x_{\mathrm{cl}}(t)]$, then evaluate trajectory $x_{\mathrm{cl}}(s)$,
+
+\begin{align}
+    x_{\mathrm{cl}}(s) = x'\frac{\sin(\omega (s-t))}{\sin(\omega (t'-t))} + x\frac{\sin(\omega (t'-s))}{\sin(\omega (t'-t))} \\
+    \frac{\mathrm{d}x_{\mathrm{cl}}}{\mathrm{d}s} = \omega\left(x'\frac{\cos(\omega (s-t))}{\sin(\omega (t'-t))} - x\frac{\cos(\omega (t'-s))}{\sin(\omega (t'-t))}\right)
+\end{align}
+
+\subsection*{b.i}
+
+Then $S[x_{\mathrm{cl}}(s)]$ is
+
+\begin{equation}
+    S[x_{\mathrm{cl}}(t)] = \int_{t}^{t'}\left(\frac{1}{2}m\dot{x}^2-\frac{1}{2}m\omega^2x^2\right)\mathrm{d}s = \frac{m\omega}{2\sin(\omega(t'-t))}\left[(x^2+x'^2)\cos(\omega(t'-t))-2x'x\right]
+\end{equation}
+
+Decomposition of the trajectory $x(t) = x_{\mathrm{cl}}(t)+y(t)$ into the classical part $x_{\mathrm{cl}}(t)$ and the fluctuation $y(t)$ around it allows to evaluate the path integral (\ref{eq:1}) up to a normalization constant
+
+\begin{equation}
+    \langle x'=x_N,t'=t_N|x=x_0,t=t_0\rangle = e^{\frac{i}{\hbar}S_{\mathrm{cl}}(t,t',x,x')}\int_{y(t)=0}^{y(t')=0}\mathcal{D}y e^{\frac{i}{\hbar}\int_t^{t'}\left(\frac{1}{2}m\dot{y}^2-\frac{1}{2}m\omega^2y^2\right)}.
+\end{equation}
+
+Since the integral over $y$ does not depend on $x$ or $x'$, we can limit ourselves to
+
+\begin{equation}
+    \langle x'=x_N,t'=t_N|x=x_0,t=t_0\rangle \sim e^{\frac{i}{\hbar}S_{\mathrm{cl}}(t,t',x,x')} \label{eq:2},
+\end{equation}
+
+with the normalization factor that we can evaluate later.
+
+\subsection*{b.ii}
+
+By performing the Wick rotation $(t'-t)\rightarrow -i\hbar\beta$ of (\ref{eq:2}),
+
+\begin{equation}
+    \langle x'|e^{-\beta\hat{H}}|x\rangle = \exp\left[-\frac{m\omega}{2\hbar\sinh(\beta\hbar\omega)}\left((x^2+x'^2)\cosh(\beta\hbar\omega)-2x'x\right)\right]
+\end{equation}
+
+\begin{equation}
+    Z = \Tr\left(e^{-\beta\hat{H}}\right) = \int_{-\infty}^{\infty}\langle x'|e^{-\beta\hat{H}}|x\rangle\mathrm{d}x \sim \sqrt{\frac{\pi\hbar}{m\omega}\coth(\frac{\beta\hbar\omega}{2})}.
+\end{equation}
+
+Full expression for the density matrix of the harmonic oscillator is
+
+\begin{equation}
+    \hat{\rho} \sim \sqrt{\frac{m\omega}{\pi\hbar}\tanh(\frac{\beta\hbar\omega}{2})} \exp\left(-\frac{m\omega}{2\hbar\sinh(\beta\hbar\omega)}\left[(x^2+x'^2)\cosh(\beta\hbar\omega)-2x'x\right]\right).
+\end{equation}
+
+When $\beta\rightarrow\infty$,
+
+\begin{equation}
+    \lim_{\beta\rightarrow\infty}\hat{\rho} = \sqrt{\frac{m\omega}{\pi\hbar}}\exp(-\frac{m\omega(x^2+x'^2)}{2\hbar})
+\end{equation}
+
+The expression of $\hat{\rho}$ at low temperature limit is aligned with previous section.

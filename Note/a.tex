@@ -1,10 +1,13 @@
-\section*{A}
+\section*{a}
+\label{sec:a}
 
 The sum required to calculate the density matrix of the canonical ensemble $\hat{\rho}\sim e^{-\beta\hat{H}}$ in the position space takes the form
 
 \begin{equation}
-    \langle x'|e^{-\beta\hat{H}}|x\rangle = \sum_{m,n}\langle x'|\psi_m\rangle\langle\psi_m|e^{-\beta\hat{H}}|\psi_n\rangle\langle\psi_n|x\rangle=\sqrt{\frac{m\omega}{\pi\hbar}}\sum_n\frac{1}{2^nn!}e^{-(\xi^2+\xi'^2)/2}e^{-\beta E_n}H_n(\xi)H_n(\xi')
+    \langle x'|e^{-\beta\hat{H}}|x\rangle = \sum_{m,n}\langle x|\psi_m\rangle\langle\psi_m|e^{-\beta\hat{H}}|\psi_n\rangle\langle\psi_n|x\rangle=\sqrt{\frac{m\omega}{\pi\hbar}}\sum_n\frac{1}{2^nn!}e^{-(\xi^2+\xi'^2)/2}e^{-\beta E_n}H_n(\xi)H_n(\xi')
 \end{equation}
+
+\subsection*{a.i}
 
 after further evaluation,
 
@@ -12,13 +15,13 @@ after further evaluation,
     \langle x'|e^{-\beta\hat{H}}|x\rangle = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \exp\left[\frac{m\omega}{4\hbar}(x+x')^2\tanh(\frac{\beta\hbar\omega}{2})+(x-x')^2\coth(\frac{\beta\hbar\omega}{2})\right]
 \end{equation}
 
+\subsection*{a.ii}
+
 to derive the partition function, 
 
 \begin{equation}
-    Z = \Tr e^{-\beta\hat{H}} = \int_{-\infty}^{\infty}\langle x'|e^{-\beta\hat{H}}|x\rangle\mathrm{d}x = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \int_{-\infty}^{\infty} \exp\left[\frac{m\omega x^2}{\hbar}\tanh(\frac{\beta\hbar\omega}{2})\right]\mathrm{d}x = \frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}}
+    Z = \Tr\left(e^{-\beta\hat{H}}\right) = \int_{-\infty}^{\infty}\langle x'|e^{-\beta\hat{H}}|x\rangle\mathrm{d}x = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \int_{-\infty}^{\infty} \exp\left[\frac{m\omega x^2}{\hbar}\tanh(\frac{\beta\hbar\omega}{2})\right]\mathrm{d}x = \frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}}
 \end{equation}
-
-then the matrix element $\hat{\rho}$ is
 
 when $\beta\rightarrow\infty$,
 
@@ -30,10 +33,15 @@ when $\beta\rightarrow\infty$,
     \lim_{\beta\rightarrow\infty}Z = 0
 \end{equation}
 
-\begin{equation}
-    \lim_{\beta\rightarrow\infty}\hat{\rho} = \frac{\langle x'|e^{-\beta\hat{H}}|x\rangle}{\Tr\left(\langle x'|e^{-\beta\hat{H}}|x\rangle\right)} = \sqrt{\frac{m\omega}{\pi\hbar}}\exp(-\frac{m\omega(x^2+x'^2)}{2\hbar})
-\end{equation}
+then the matrix element $\hat{\rho}$ is
 
 \begin{equation}
-    \langle \hat{x}^2\rangle = \Tr\left(\hat{\rho}\hat{x}^2\right) = \int_{-\infty}^{\infty}\langle x'|x^2e^{-\beta\hat{H}}|x\rangle\mathrm{d}x = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \int_{-\infty}^{\infty} x^2\exp\left[\frac{m\omega x^2}{\hbar}\tanh(\frac{\beta\hbar\omega}{2})\right]\mathrm{d}x = \sqrt{\frac{\hbar}{2m\omega\tanh(\beta\hbar\omega/2)}}
+    \lim_{\beta\rightarrow\infty}\hat{\rho} = \lim_{\beta\rightarrow\infty}\frac{e^{-\beta\hat{H}}}{\Tr\left(e^{-\beta\hat{H}}\right)} = \sqrt{\frac{m\omega}{\pi\hbar}}\exp(-\frac{m\omega(x^2+x'^2)}{2\hbar})
 \end{equation}
+
+\begin{align}
+    \begin{split}
+        \langle \hat{x}^2\rangle = \Tr\left(\hat{\rho}\hat{x}^2\right) &= \int_{-\infty}^{\infty}\langle x'|x^2e^{-\beta\hat{H}}|x\rangle\mathrm{d}x = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \int_{-\infty}^{\infty} x^2\exp\left[\frac{m\omega x^2}{\hbar}\tanh(\frac{\beta\hbar\omega}{2})\right]\mathrm{d}x \\
+        &= \sqrt{\frac{\hbar}{2m\omega\tanh(\beta\hbar\omega/2)}}
+    \end{split}
+\end{align}

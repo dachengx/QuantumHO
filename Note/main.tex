@@ -11,6 +11,7 @@ top=20mm,
 }
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
+\usepackage[affil-it]{authblk}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{url}
@@ -31,25 +32,26 @@ top=20mm,
 
 \title{Project: Quantum Harmonic Oscillator}
 \author{Dacheng Xu}
+\affil{Physics Department, Columbia University}
 \date{2022.12.10}
 
 \begin{document}
 \maketitle
-\newpage
-\thispagestyle{empty}
-\begin{large}
-\tableofcontents
-\listoffigures
-\end{large}
-\newpage
-\setcounter{page}{1}
+% \newpage
+% \thispagestyle{empty}
+% \begin{large}
+% \tableofcontents
+% \listoffigures
+% \end{large}
+% \newpage
+% \setcounter{page}{1}
 
 \input{abstraction}
-\newpage
-\thispagestyle{empty}
+% \newpage
+% \thispagestyle{empty}
 \input{introduction}
 \input{a}
-% \input{b}
+\input{b}
 % \input{c}
 
 % \nocite{*}
