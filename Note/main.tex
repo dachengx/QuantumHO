@@ -1,0 +1,55 @@
+% !TEX program = pdflatex
+% !BIB program = bibtex
+\documentclass{article}
+
+\usepackage{geometry}
+\geometry{
+a4paper,
+total={170mm,257mm},
+left=20mm,
+top=20mm,
+}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\title{Project: Quantum Harmonic Oscillator}
+\author{Dacheng Xu}
+\date{2022.12.10}
+
+\begin{document}
+\maketitle
+\newpage
+\thispagestyle{empty}
+\begin{large}
+\tableofcontents
+\listoffigures
+\end{large}
+\newpage
+\setcounter{page}{1}
+
+\input{abstraction}
+\newpage
+\thispagestyle{empty}
+\input{introduction}
+% \input{a}
+% \input{b}
+% \input{c}
+
+% \nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{ref}
+\newpage
+% \input{appendix}
+
+\end{document}
