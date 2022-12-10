@@ -20,6 +20,9 @@ top=20mm,
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{chngcntr}
+\counterwithin*{subsection}{section}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
 \newtheorem{theorem}{Theorem}[section]
 
@@ -42,7 +45,7 @@ top=20mm,
 \newpage
 \thispagestyle{empty}
 \input{introduction}
-% \input{a}
+\input{a}
 % \input{b}
 % \input{c}
 

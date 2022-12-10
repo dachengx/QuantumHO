@@ -1,0 +1,22 @@
+\section{A}
+
+The sum required to calculate the density matrix of the canonical ensemble $\hat{\rho}\sim e^{-\beta\hat{H}}$ in the position space takes the form
+
+\begin{equation}
+    \langle x'|e^{-\beta\hat{H}}|x\rangle = \sum_{m,n}\langle x'|\psi_m\rangle\langle\psi_m|e^{-\beta\hat{H}}|\psi_n\rangle\langle\psi_n|x\rangle=\sqrt{\frac{m\omega}{\pi\hbar}}\sum_n\frac{1}{2^nn!}e^{-(\xi^2+\xi'^2)/2}e^{-\beta E_n}H_n(\xi)H_n(\xi')
+\end{equation}
+
+after further evaluation,
+
+\begin{equation}
+    \langle x'|e^{-\beta\hat{H}}|x\rangle = \sqrt{\frac{m\omega}{\pi\hbar}}e^{-\frac{1}{2}\beta\hbar\omega}\sum_n\frac{1}{2^nn!}e^{-(\xi^2+\xi'^2)/2}e^{-\beta\hbar\omega n}H_n(\xi)H_n(\xi')
+\end{equation}
+
+when $\beta\rightarrow\inf$, the only non-zero term is when $n=0$, 
+
+\begin{equation}
+    \langle x'|e^{-\beta\hat{H}}|x\rangle = \sqrt{\frac{m\omega}{\pi\hbar}}e^{-\frac{1}{2}\beta\hbar\omega}e^{-\frac{1}{2}(\xi^2+\xi'^2)}
+\end{equation}
+
+
+
