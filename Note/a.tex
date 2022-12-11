@@ -42,6 +42,10 @@ then the matrix element $\hat{\rho}$ is
 \begin{align}
     \begin{split}
         \langle \hat{x}^2\rangle = \Tr\left(\hat{\rho}\hat{x}^2\right) &= \int_{-\infty}^{\infty}\langle x'|x^2e^{-\beta\hat{H}}|x\rangle\mathrm{d}x = \left(\frac{m\omega}{2\pi\hbar\sinh(\beta\hbar\omega)}\right)^{1/2} \int_{-\infty}^{\infty} x^2\exp\left[\frac{m\omega x^2}{\hbar}\tanh(\frac{\beta\hbar\omega}{2})\right]\mathrm{d}x \\
-        &= \sqrt{\frac{\hbar}{2m\omega\tanh(\beta\hbar\omega/2)}}
+        &= \frac{\hbar}{2m\omega\tanh(\beta\hbar\omega/2)}
     \end{split}
 \end{align}
+
+\begin{equation}
+    \lim_{\beta\rightarrow\infty}\langle \hat{x}^2\rangle = \frac{\hbar}{2m\omega}\label{eq:3}
+\end{equation}
