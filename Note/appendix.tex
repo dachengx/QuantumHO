@@ -1,0 +1,37 @@
+\section*{Appendix: Python code}
+\begin{lstlisting}
+a = 1e-2
+
+# number of simulation
+M = 1000000
+
+# number of runner
+N = 1000
+
+def logpdf(array, a=1):
+    # return -a * np.sum(((array[0] - array[1]) ** 2) / (2 * a ** 2) + array[0] ** 2 / 2)
+    _array = np.diff(np.append(array, array[0]))
+    return -a * np.sum(np.power(_array, 2) / (2 * a ** 2) + np.power(array, 2) ** 2 / 2)
+
+def metropolis(array, i, a):
+    _array = array.copy()
+    _array[i] += np.random.normal(scale=a)
+
+    # delta = logpdf(np.array([_array[i], _array[(i-1+N)//N]]), a=a)
+    # delta -= logpdf(np.array([array[i], array[(i-1+N)//N]]), a=a)
+    delta = logpdf(_array, a=a) - logpdf(array, a=a)
+    r = np.random.uniform()
+    if delta > np.log(r):
+        return _array
+    else:
+        return array
+
+def x2_mean(a):
+    # return 1 / (2 * np.tanh(a * N / 2))
+    return 1 / 2
+
+# Metropolis algorithm
+for i, j in tqdm(zip(range(1, M), indices[1:]), total=M-1, miniters=100):
+    array_repo[i] = metropolis(array_repo[i-1], j, a)
+
+\end{lstlisting}
